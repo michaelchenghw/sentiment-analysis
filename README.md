@@ -16,12 +16,12 @@ A list of the Facebook pages used:
 2. "https://mobile.facebook.com/80shing/"
 
 ## Natural Language Processing
-After the training data have been collected, natural language processing is performed using the `NLTK` library. Each comment is assigned a sentiment score between -1.00 to 1.00, where are higher score indicated a more positve or optimistic sentiment and 0.00 indicates neutrality. All of the comments from each single day are then weighted and compiled to generate a daily sentiment index, also ranging between -1.0 to 1.0.
+After the training data have been collected, natural language processing is performed using the `NLTK` library. Each comment is assigned a sentiment score between -1.00 to 1.00, where higher scores indicate a more positve or optimistic sentiment and 0.00 indicates neutrality. All of the comments from each single day are then weighted and compiled to generate a daily sentiment index, also ranging between -1.0 to 1.0.
 
 Currently, the evaluation procedure is simply implemented using the built-in pre-trained model in the `NLTK` database.
 
 ## Maximum Likelihood Estimation
-After all the training data have been processed, the sentiment indices from every 2 consecutive days are joint to form a data pair (x,y), with x being the sentiment index on the first day and y being that on the second day. A probability distribution model P is then developed using multinomial maximum likelihood estimation, where the sentiment indices are considered as random variables, with independent variable being x and dependent variable being y. The distribution model is represented with a 10×10 matrix.
+After all the training data have been processed, the sentiment indices from every 2 consecutive days are joint to form a data pair (x,y), with x being the sentiment index on the first day and y being that on the second day. A probability distribution model is then developed using multinomial maximum likelihood estimation, where the sentiment indices are considered as random variables, with independent variable being x and dependent variable being y. The distribution model is represented with a 10×10 matrix.
 
 ## Markov Chain
 The final test and prediction is achieved by the use of markov chain, where the evolution of the daily sentiment index is assumed to be a stochastic process that only depends on the index on the previous day. The sentiment on the present day is collected and processed in a way similar to that of the training data, except that the variation among the comments is taken into account, and the data is represented as a probability vector instead to represent the uncertainty.

@@ -1,4 +1,4 @@
-# sentiment-analysis
+# Algorithmic Crowd Sentiment Analysis (ACSA)
 **This algorithm aims to perform analysis and prediction of sentiment in the financial market through the use of web-scrapping, natural language processing and statistical tools.**
 
 The fundemental rationale behind this project is to investigate the predictability of human sentiment, in particular crowd sentiment, from a data-driven perspective, and explore the application of such phenomenon in automated algorithmic trading.

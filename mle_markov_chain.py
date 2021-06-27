@@ -1,5 +1,9 @@
 import random_data_generator
 
+def roundnum(x):    #Round num to the nearest 0.2
+    return int(round(x*5)/5)
+
+
 def matrix_generator(i, j):
     """
     Takes in integers i and j.
@@ -30,8 +34,17 @@ def multinomial_mle(data):
     0 <= x,y <= 9
     """
     data_matrix = matrix_generator(10,10)
+    
+    for i in data:
+        indexfirst = int(((roundnum(i[1]) + 1) * 10) / 2 - 1)  
+        indexsecond = int((roundnum (i[0] + 1) * 10) / 2 - 1)
+        data_matrix[indexfirst][indexsecond] += 1
+        
+    """
     for i in data:
        data_matrix[i[1]][i[0]] += 1
+    """
+    
     column_sum_list = []
     for i in range(0,10):
         column_sum = 0
@@ -41,7 +54,7 @@ def multinomial_mle(data):
     distribution = matrix_generator(10,10)
     for i in range(0,10):
         for j in range(0,10):
-            distribution[i][j] = data_matrix[i][j] / column_sum_list[j]
+            distribution[i][j] = data_matrix[i][j] / column_sum_list[j]  #Make sure column_sum_list[j] != 0
     return distribution
 
 def markov_chain(distribution):
@@ -68,11 +81,28 @@ def markov_chain(distribution):
         chain[i] = matrix
     return chain
 
+
+"""
 def main():
     data = random_data_generator.random_data()
     matrix = multinomial_mle(data)
     chain = markov_chain(matrix)
     return chain
+"""
+
+
+def main():
+    date = [["2020-02-03",0.3], ["2020-02-03",0.5]]   #Output format from nlp
+    sentiment = []
+    for i in range (len(date) - 1):  #Group sentiment values in pairs
+        pair = []
+        pair.append(date[i][1])
+        pair.append(date[i+1][1])
+        sentiment.append(pair)
+    
+    matrix = multinomial_mle(sentiment)
+    chain = markov_chain(matrix)
+
 
 if __name__ == '__main__':
     main()

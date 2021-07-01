@@ -1,3 +1,8 @@
+"""
+To scrape comments from yahoo finance
+
+"""
+
 from bs4 import BeautifulSoup as soup
 from selenium import webdriver
 from time import sleep 
@@ -14,7 +19,7 @@ Comment data obtained in the format of:
 PATH = "/Users/yaushingjonathancheung/Desktop/chromedriver"
 
 driver = webdriver.Chrome(PATH)
-driver.get("https://finance.yahoo.com/quote/AAPL/community/")
+driver.get("https://finance.yahoo.com/quote/AAPL/community/") #URL
 
 
 link = driver.find_element_by_xpath("//div[@class='sorting-tabs-container Pos(r) Mt(5px)']//*[@class='sort-filter-button O(n):h O(n):a Fw(b) M(0) P(0) Ff(i) C(#000) Fz(16px)']")

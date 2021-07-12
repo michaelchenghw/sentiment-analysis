@@ -39,7 +39,7 @@ Below are several reasons that we believe led to low accuracy predictions by the
 2)	We assumed that the sentiment of the 2nd day only depends on the day before which is also unlikely
 3)	There can always be more data used in training !! 
 
-From our research, we found out that sentiment scores range from -0.2 to 0.2. We believe this phenomenon arises because people view price changes differently. For example: when stock price increases, people who own Apple stock will gain, but for those who just sold their stock, they will feel bad or regretful. This contradictory emotion reflected in comments results in a neutral sentiment value. This, therefore, poses a huge challenge in using NLP and sentiment analysis in stock price prediction as it requires biased and one-sided comments to give meaningful insight on future price movements.
+From our research, we found out that sentiment scores range from -0.2 to 0.2. We believe this phenomenon arises because people view price changes differently. For example: when stock price increases, people who own Apple stock will gain, but for those who just sold their stock, they will feel bad or regretful. This contradictory perspective on price movements results in a neutral sentiment value. This, therefore, poses a huge challenge in using NLP and sentiment analysis in stock price prediction as little insights on future price movements could be derived from unbiased sentiment scores.
 
 
 ## References and Documentation

@@ -28,6 +28,23 @@ The final test and prediction is achieved by the use of markov chain, where the 
 
 After recursively transforming the vector with the probability distribution matrix, 7 vectors that represent the probability distribution of the sentiment index on the next 7 days are generated. This output may then be applied to other algorithmic trading models for further analysis.
 
+## Results
+
+
+
+## Conclusion and Insights
+
+Below are several reasons that we believe led to low accuracy predictions by the model
+1)	We assumed that sentiment scores of any 2 consecutive days must have a constant pattern which is very unlikely
+2)	We assumed that the sentiment of the 2nd day only depends on the day before which is also unlikely
+3)	There can always be more data used in training !! 
+
+
+Insights:
+From our research, we found out that sentiment scores range from -0.2 to 0.2. We believe this phenomenon arises because people view price changes differently. For example: when stock price increases, people who own Apple stock will gain, but for those who just sold their stock, they will feel bad or regretful. This contradictory emotion reflected in comments results in a neutral sentiment value.
+Most importantly, we believe this poses a huge challenge in using NLP and sentiment analysis in stock price prediction as it requires biased and one-sided comments to give meaningful insight on future price movements.
+
+
 ## References and Documentation
 1. https://www.crummy.com/software/BeautifulSoup/bs4/doc/#find-all
 2. https://requests.readthedocs.io/en/master/api/#requests.Response

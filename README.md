@@ -29,7 +29,7 @@ The final test and prediction is achieved by the use of markov chain, where the 
 After recursively transforming the vector with the probability distribution matrix, 7 vectors that represent the probability distribution of the sentiment index on the next 7 days are generated. This output may then be applied to other algorithmic trading models for further analysis.
 
 ## Results
-
+Unfortunately, the model is unable to give an accurate prediction of future stock prices
 
 
 ## Conclusion and Insights
